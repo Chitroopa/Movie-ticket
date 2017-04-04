@@ -3,9 +3,7 @@ function Ticket(movie, time, age) {
   this.movieName = movie;
   this.showTime = time;
   this.userAge = age;
-
 }
-
 Ticket.prototype.ticketPrice = function () {
   var movieCost = 0;
   var showCost = 0;
@@ -38,13 +36,8 @@ Ticket.prototype.ticketPrice = function () {
   {
     ageCost = 1;
   }
-
   return movieCost + showCost + ageCost;
-
 }
-
-
-
 // user interface logic
 $(document).ready(function() {
   $("#form-one").submit(function(event) {
@@ -53,12 +46,8 @@ $(document).ready(function() {
   var movieInput = $("#movie").val();
   var timeInput = $("input:radio[name=show-time]:checked").val();
   var ageInput = $("input:radio[name=age]:checked").val();
-  console.log(movieInput, timeInput, ageInput);
   var newTicket = new Ticket(movieInput, timeInput, ageInput);
   $(".ticket-price").show();
   $("#result").text(newTicket.ticketPrice());
-  console.log(newTicket.ticketPrice());
-
-
   });
 });
